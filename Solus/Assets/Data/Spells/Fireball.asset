@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391f73d93c26cf842b8ccc2bf973b32a, type: 3}
+  m_Name: Fireball
+  m_EditorClassIdentifier: 
+  speed: 6
+  cooldown: 4
+  durationTime: 5
+  damage: 20
+  maximumCastingDistance: Infinity
+  icon: {fileID: 21300000, guid: 2d0997ac1b1fd664e98202450e7ea2d7, type: 3}
+  castType: 0
+  isProjectile: 1
+  hasPreview: 0
+  previewPrefab: {fileID: 0}
+  floorLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  fireball: {fileID: 114411724010454488, guid: 2d70478ef7293d64e833520fc78ec516, type: 2}
+  explosionPrefab: {fileID: 1250361742534902, guid: acb914597038bf24b8dbf9f38fc36e73,
+    type: 2}
+  radius: 2
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  fireballCastAudioClip: {fileID: 8300000, guid: c1679faf684c814499b584469019e79b,
+    type: 3}

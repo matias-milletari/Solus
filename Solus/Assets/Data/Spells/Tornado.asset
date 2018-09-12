@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0662cf2cce45ca4a9c3cfab28927acc, type: 3}
+  m_Name: Tornado
+  m_EditorClassIdentifier: 
+  speed: 1
+  cooldown: 8
+  durationTime: 8
+  damage: 5
+  maximumCastingDistance: 12
+  icon: {fileID: 21300000, guid: eced15bb959edc54c8457ab75f9a45b5, type: 3}
+  castType: 2
+  isProjectile: 0
+  hasPreview: 1
+  previewPrefab: {fileID: 1095683090784092, guid: e20cf17d31419ad4cb086cf6fe6026e7,
+    type: 2}
+  floorLayerMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  spellCooldown: {fileID: 0}
+  tornado: {fileID: 114430725562046310, guid: d8263c3d84b4c7547b1a4fa5797ed601, type: 2}
+  damageTimeInterval: 0.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1024
