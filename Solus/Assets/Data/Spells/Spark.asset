@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d732b62faa6ee974caeecb173c4878fd, type: 3}
   m_Name: Spark
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 6
   cooldown: 0.5
   durationTime: 2
   damage: 15

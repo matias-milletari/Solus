@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0662cf2cce45ca4a9c3cfab28927acc, type: 3}
   m_Name: Tornado
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   cooldown: 8
-  durationTime: 8
-  damage: 5
+  durationTime: 5
+  damage: 20
   maximumCastingDistance: 12
   icon: {fileID: 21300000, guid: eced15bb959edc54c8457ab75f9a45b5, type: 3}
   castType: 2
@@ -25,7 +25,6 @@ MonoBehaviour:
   floorLayerMask:
     serializedVersion: 2
     m_Bits: 16384
-  spellCooldown: {fileID: 0}
   tornado: {fileID: 114430725562046310, guid: d8263c3d84b4c7547b1a4fa5797ed601, type: 2}
   damageTimeInterval: 0.5
   enemyLayer:

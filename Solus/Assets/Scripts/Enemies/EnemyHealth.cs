@@ -79,7 +79,7 @@ public class EnemyHealth : MonoBehaviour
         enemyAudioSource.loop = false;
         enemyAudioSource.Play();
 
-        OnHealthRemoved(this);
+        if (OnHealthRemoved != null) OnHealthRemoved(this);
 
         Invoke("StartSinking", 2f);
     }

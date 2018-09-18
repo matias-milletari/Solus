@@ -25,23 +25,6 @@ public class EnemyHealthBar : MonoBehaviour
 
     private void LateUpdate()
     {
-        //transform.forward = mainCamera.transform.forward;
-
-        //var distanceToPlayer = gameObject.transform.position - mainCamera.transform.position;
-        //distanceToPlayer.y = 0f;
-
-        //if (distanceToPlayer.sqrMagnitude <= minCameraDistance * minCameraDistance)
-        //{
-        //    if (Vector3.Dot(distanceToPlayer.normalized, mainCamera.transform.forward) > Mathf.Cos(detectionAngle * 0.5f * Mathf.Deg2Rad))
-        //    {
-        //        gameObject.SetActive(true);
-        //    }
-        //}
-        //else
-        //{
-        //    gameObject.SetActive(false);
-        //}
-
         transform.position = mainCamera.WorldToScreenPoint(enemyHealth.transform.position + Vector3.up * positionOffset);
     }
 
