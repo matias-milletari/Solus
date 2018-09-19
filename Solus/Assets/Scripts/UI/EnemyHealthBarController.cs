@@ -35,6 +35,6 @@ public class EnemyHealthBarController : MonoBehaviour
     {
         if (!healthBars.ContainsKey(enemyHealth)) return;
 
-        healthBars[enemyHealth].gameObject.SetActive(visible);
+        healthBars[enemyHealth].gameObject.SetActive(false);
     }
 }

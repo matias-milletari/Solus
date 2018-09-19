@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
@@ -41,12 +39,17 @@ public class MusicManager : MonoBehaviour
     public void PopTrack()
     {
         if (trackStack.Count > 1)
+        {
             trackStack.Pop();
+        }
+
         Enqueue(trackStack.Peek());
     }
 
     public void Enqueue(string name)
     {
+        audioSources.RemoveAll(x => x == null);
+
         if (audioSources.Any(x => x.name == name))
         {
             foreach (var i in audioSources)

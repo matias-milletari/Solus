@@ -1603,6 +1603,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   timeToStopFollowing: 3
   enemyProjectile: {fileID: 0}
   shootingPoint: {fileID: 0}

@@ -9,8 +9,6 @@ public class MainMenuController : MonoBehaviour
 
     void Start()
     {
-        MusicManager.instance.PushTrack(mainMenuAudioSource.name);
-
         mainMenu.SetActive(true);
         audioMenu.SetActive(false);
         helpMenu.SetActive(false);

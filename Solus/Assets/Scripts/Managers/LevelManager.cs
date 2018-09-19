@@ -59,6 +59,8 @@ public class LevelManager : MonoBehaviour
         SunRelicController.OnRelicObtained += ShowGameOverMenu;
     }
 
+    //TODO: Desacoplar el comportamiento de la puerta para 
+
     void Update()
     {
         if (currentEnemies == 0 && Vector3.Distance(entranceDoor.transform.position, entranceDoorFinalPosition) > 1f)
