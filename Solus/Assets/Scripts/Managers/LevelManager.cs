@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
     private int currentEnemies;
     private Camera mainCamera;
 
-    void Awake()
+    private void Awake()
     {
         mainCamera = Camera.main;
 
@@ -57,6 +57,15 @@ public class LevelManager : MonoBehaviour
 
         PlayerHealth.OnPlayerDead += ShowGameOverMenu;
         SunRelicController.OnRelicObtained += ShowGameOverMenu;
+    }
+
+    private void OnDestroy()
+    {
+        EnemySpawner.OnUnitSpawned -= IncreaseEnemyCount;
+        EnemyHealth.OnEnemyDestroyed -= DecreaseEnemyCount;
+
+        PlayerHealth.OnPlayerDead -= ShowGameOverMenu;
+        SunRelicController.OnRelicObtained -= ShowGameOverMenu;
     }
 
     //TODO: Desacoplar el comportamiento de la puerta para 

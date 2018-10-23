@@ -35,7 +35,7 @@ public class EnemyHealth : MonoBehaviour
 
         currentHealth = maximumHealth;
 
-        OnHealthAdded(this);
+        if (OnHealthAdded != null) OnHealthAdded(this);
 
         enemyAnimator.SetFloat("Health", maximumHealth);
     }

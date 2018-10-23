@@ -28,8 +28,15 @@ public class PlayerController : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+
         PauseMenuController.OnGamePaused += PauseCamera;
         GameOverMenuController.OnGamePaused += PauseCamera;
+    }
+
+    private void OnDestroy()
+    {
+        PauseMenuController.OnGamePaused -= PauseCamera;
+        GameOverMenuController.OnGamePaused -= PauseCamera;
     }
 
     private void FixedUpdate()

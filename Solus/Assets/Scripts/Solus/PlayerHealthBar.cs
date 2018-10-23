@@ -10,6 +10,11 @@ public class PlayerHealthBar : MonoBehaviour
         PlayerHealth.OnPlayerHurt += ModifyPlayerHealth;
     }
 
+    private void OnDestroy()
+    {
+        PlayerHealth.OnPlayerHurt -= ModifyPlayerHealth;
+    }
+
     private void ModifyPlayerHealth(float healthPercentage)
     {
         healthBar.fillAmount = healthPercentage;

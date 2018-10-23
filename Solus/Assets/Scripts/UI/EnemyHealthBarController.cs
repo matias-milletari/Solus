@@ -9,9 +9,9 @@ public class EnemyHealthBarController : MonoBehaviour
 
     private void Awake()
     {
-        EnemyHealth.OnHealthAdded += AddEnemyHealthBar;
-        EnemyHealth.OnHealthRemoved += DestroyEnemyHealthBar;
-        PlayerSensor.OnEnemySighted += ShowEnemyHealthBar;
+        //EnemyHealth.OnHealthAdded += AddEnemyHealthBar;
+        //EnemyHealth.OnHealthRemoved += DestroyEnemyHealthBar;
+        //PlayerSensor.OnEnemySighted += ShowEnemyHealthBar;
     }
 
     private void AddEnemyHealthBar(EnemyHealth enemyHealth)

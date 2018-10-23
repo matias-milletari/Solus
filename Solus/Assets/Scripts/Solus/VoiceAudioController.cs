@@ -12,6 +12,11 @@ public class VoiceAudioController : MonoBehaviour
         PlayerHealth.OnPlayerHurt += PlayDamageAudioClip;
     }
 
+    private void OnDestroy()
+    {
+        PlayerHealth.OnPlayerHurt -= PlayDamageAudioClip;
+    }
+
     private void PlayDamageAudioClip(float currentHealthPercentage)
     {
         if (currentHealthPercentage > 0)

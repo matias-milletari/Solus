@@ -26,7 +26,12 @@ public class SpellCooldown : MonoBehaviour
         AbilityReady();
     }
 
-    void Update()
+    private void OnDestroy()
+    {
+        PlayerCasting.OnSpellCasted -= SetCooldown;
+    }
+
+    private void Update()
     {
         var coolDownComplete = (Time.time > nextReadyTime);
 
