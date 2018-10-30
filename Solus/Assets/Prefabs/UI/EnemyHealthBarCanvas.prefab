@@ -75,9 +75,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef85f9ebbef0e2419e11fda789ed5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minCameraDistance: 10
+  minCameraDistance: 20
   healthBarImage: {fileID: 114695636460169440}
-  positionOffset: 2
+  positionOffset: 1.5
 --- !u!114 &114506221965524460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,6 +256,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 94.8, y: 58.4}
-  m_SizeDelta: {x: 142.56, y: 13.99}
+  m_AnchoredPosition: {x: 113.74, y: 154.07}
+  m_SizeDelta: {x: 58.72, y: 5.76}
   m_Pivot: {x: 0.5, y: 0.5}

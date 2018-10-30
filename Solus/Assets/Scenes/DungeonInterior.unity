@@ -2616,48 +2616,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 810524112}
   m_CullTransparentMesh: 0
---- !u!1 &813495542 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1679877962108046, guid: bfe0cd5d6c5f6384e836312eef6a7945,
-    type: 2}
-  m_PrefabInternal: {fileID: 595722084}
---- !u!114 &813495543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 813495542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb7b1ae012f0a8d42950aea231845a1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hurtClips:
-  - {fileID: 8300000, guid: a4e803a901dee444c82fbd45bba758a0, type: 3}
-  - {fileID: 8300000, guid: 0cd1f22ca145bf343a56187c1f9ac087, type: 3}
-  - {fileID: 8300000, guid: d03cb854194d8b948a9eff6065ea9728, type: 3}
-  - {fileID: 8300000, guid: f5557dc027b811c45a3021123e0591b4, type: 3}
-  - {fileID: 8300000, guid: e32ceafbe67c43646b3474d50a888d81, type: 3}
-  - {fileID: 8300000, guid: b1fc381d5d876f046b26c9df42b7e3fe, type: 3}
-  - {fileID: 8300000, guid: 829dfe614e7bcf847ae519942fcb25dd, type: 3}
-  - {fileID: 8300000, guid: 541dbe29cb83c7946956d52732c7701f, type: 3}
-  deathClip: {fileID: 8300000, guid: 680ed7d77a7e6ca478b3d5dceb57c665, type: 3}
-  audioSource: {fileID: 1363638828}
---- !u!114 &813495544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 813495542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434489fd1865192439c9875ce74de858, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 20
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!1 &819722414
 GameObject:
   m_ObjectHideFlags: 0
@@ -4031,11 +3989,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1353054851}
   m_CullTransparentMesh: 0
---- !u!82 &1363638828 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 82070808845150574, guid: bfe0cd5d6c5f6384e836312eef6a7945,
-    type: 2}
-  m_PrefabInternal: {fileID: 595722084}
 --- !u!4 &1372438563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4244570529007062, guid: a21776939baf99e4694ae0f26322101d,
@@ -4237,7 +4190,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 421177865}
   m_HandleRect: {fileID: 421177864}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

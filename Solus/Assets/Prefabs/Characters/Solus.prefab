@@ -1131,6 +1131,7 @@ GameObject:
   - component: {fileID: 114132586398720682}
   - component: {fileID: 114000140346313822}
   - component: {fileID: 114450279407459198}
+  - component: {fileID: 114864328278887256}
   m_Layer: 11
   m_Name: Solus
   m_TagString: Player
@@ -3164,9 +3165,6 @@ MonoBehaviour:
   currentHealth: 0
   maximumHealth: 100
   isDead: 0
-  voiceAudioSource: {fileID: 82070808845150574}
-  hurtAudioClip: {fileID: 8300000, guid: 59ec162de00b1544ead1d3bcef449ded, type: 3}
-  deathAudioClip: {fileID: 8300000, guid: ba850504640bdf04b813dafeabebc1fb, type: 3}
 --- !u!114 &114230268062758142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3251,6 +3249,28 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &114864328278887256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679877962108046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7b1ae012f0a8d42950aea231845a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtClips:
+  - {fileID: 8300000, guid: a4e803a901dee444c82fbd45bba758a0, type: 3}
+  - {fileID: 8300000, guid: 0cd1f22ca145bf343a56187c1f9ac087, type: 3}
+  - {fileID: 8300000, guid: d03cb854194d8b948a9eff6065ea9728, type: 3}
+  - {fileID: 8300000, guid: f5557dc027b811c45a3021123e0591b4, type: 3}
+  - {fileID: 8300000, guid: e32ceafbe67c43646b3474d50a888d81, type: 3}
+  - {fileID: 8300000, guid: b1fc381d5d876f046b26c9df42b7e3fe, type: 3}
+  - {fileID: 8300000, guid: 829dfe614e7bcf847ae519942fcb25dd, type: 3}
+  - {fileID: 8300000, guid: 541dbe29cb83c7946956d52732c7701f, type: 3}
+  deathClip: {fileID: 8300000, guid: 680ed7d77a7e6ca478b3d5dceb57c665, type: 3}
+  audioSource: {fileID: 82070808845150574}
 --- !u!124 &124618023118669122
 Behaviour:
   m_ObjectHideFlags: 1

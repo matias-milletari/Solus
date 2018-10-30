@@ -8,13 +8,14 @@ public class EnemyHealthBar : MonoBehaviour
     [SerializeField] private Image healthBarImage;
     [SerializeField] private float positionOffset;
 
+    private Canvas healthBarCanvas;
     private EnemyHealth enemyHealth;
     private Camera mainCamera;
-    private float detectionAngle = 180f;
 
     private void Awake()
     {
         mainCamera = Camera.main;
+        healthBarCanvas = GetComponent<Canvas>();
     }
 
     public void SetHealth(EnemyHealth health)
@@ -25,7 +26,17 @@ public class EnemyHealthBar : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = mainCamera.WorldToScreenPoint(enemyHealth.transform.position + Vector3.up * positionOffset);
+        var barPosition = mainCamera.WorldToScreenPoint(enemyHealth.transform.position + Vector3.up * positionOffset);
+
+        if (Vector3.Distance(enemyHealth.transform.position, mainCamera.transform.position) > minCameraDistance || barPosition.z < 0)
+        {
+            healthBarCanvas.enabled = false;
+        }
+        else
+        {
+            healthBarCanvas.enabled = true;
+            transform.position = barPosition;
+        }
     }
 
     private void ModifyEnemyHealth(float health)
