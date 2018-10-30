@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
@@ -14,20 +13,18 @@ public class LevelManager : MonoBehaviour
     public GameObject slimePrefab;
     public Transform[] spawnPoints;
     public Transform[] paths;
-    public GameObject entranceDoor;
-    public Vector3 entranceDoorFinalPosition;
     public GameObject gameOverMenu;
 
     private EnemySpawner batSpawner;
     private EnemySpawner ghostSpawner;
     private EnemySpawner slimeSpawner;
     private int currentEnemies;
-    private Camera mainCamera;
+
+    public delegate void EnemyHandler();
+    public static event EnemyHandler OnEnemiesDestroyed;
 
     private void Awake()
     {
-        mainCamera = Camera.main;
-
         batSpawner = gameObject.AddComponent<EnemySpawner>();
 
         batSpawner.enemyPrefab = batPrefab;
@@ -68,18 +65,6 @@ public class LevelManager : MonoBehaviour
         SunRelicController.OnRelicObtained -= ShowGameOverMenu;
     }
 
-    //TODO: Desacoplar el comportamiento de la puerta para 
-
-    void Update()
-    {
-        if (currentEnemies == 0 && Vector3.Distance(entranceDoor.transform.position, entranceDoorFinalPosition) > 1f)
-        {
-            entranceDoor.transform.position = Vector3.MoveTowards(entranceDoor.transform.position, entranceDoorFinalPosition, Time.deltaTime * 2);
-
-            mainCamera.GetComponent<CameraShake>().ShakeCamera(1f);
-        }
-    }
-
     private void IncreaseEnemyCount()
     {
         currentEnemies++;
@@ -88,6 +73,11 @@ public class LevelManager : MonoBehaviour
     private void DecreaseEnemyCount()
     {
         currentEnemies--;
+
+        if (currentEnemies == 0 && OnEnemiesDestroyed != null)
+        {
+            OnEnemiesDestroyed();
+        }        
     }
 
     private void ShowGameOverMenu()

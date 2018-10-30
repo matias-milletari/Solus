@@ -38,41 +38,32 @@ public class MusicManager : MonoBehaviour
 
     public void PopTrack()
     {
-        if (trackStack.Count > 1)
-        {
-            trackStack.Pop();
-        }
+        trackStack.Pop();
 
-        Enqueue(trackStack.Peek());
+        if (trackStack.Count >= 1)
+        {
+            Enqueue(trackStack.Peek());
+        }
     }
 
     public void Enqueue(string name)
     {
         audioSources.RemoveAll(x => x == null);
 
-        if (audioSources.Any(x => x.name == name))
-        {
-            foreach (var i in audioSources)
-            {
-                if (i.name != name) continue;
-
-                fadeAudio = activeAudio;
-                activeAudio = i;
-                if (!activeAudio.isPlaying) activeAudio.Play();
-                break;
-            }
-        }
-        else
+        if (audioSources.All(x => x.name != name))
         {
             var newAudioSource = GameObject.Find(name).GetComponent<AudioSource>();
-
             audioSources.Add(newAudioSource);
+        }
+
+        foreach (var i in audioSources)
+        {
+            if (i.name != name) continue;
 
             fadeAudio = activeAudio;
-
-            activeAudio = newAudioSource;
-
+            activeAudio = i;
             if (!activeAudio.isPlaying) activeAudio.Play();
+            break;
         }
     }
 
