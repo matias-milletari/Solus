@@ -13,6 +13,12 @@ public class EnemyHealthBarController : MonoBehaviour
         EnemyHealth.OnHealthRemoved += DestroyEnemyHealthBar;
     }
 
+    private void OnDestroy()
+    {
+        EnemyHealth.OnHealthAdded -= AddEnemyHealthBar;
+        EnemyHealth.OnHealthRemoved -= DestroyEnemyHealthBar;
+    }
+
     private void AddEnemyHealthBar(EnemyHealth enemyHealth)
     {
         if (healthBars.ContainsKey(enemyHealth)) return;
