@@ -89,6 +89,6 @@ public class PauseMenuController : MonoBehaviour
 
     public void QuitGame()
     {
-        LoadingScreenController.Instance.Show(SceneManager.LoadSceneAsync(0));
+        GameManager.instance.QuitGame();
     }
 }
