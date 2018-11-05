@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Spell : ScriptableObject
+public abstract class Spell : ScriptableObject
 {
     [SerializeField] float speed;
     [SerializeField] float cooldown;
