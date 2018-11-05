@@ -210,6 +210,19 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114502091940120838, guid: a72366023a7d50c4caf744d4783116d5,
+        type: 2}
+      propertyPath: m_Text
+      value: Loading
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756823666600828, guid: a72366023a7d50c4caf744d4783116d5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105702436586616, guid: a72366023a7d50c4caf744d4783116d5, type: 2}
+      propertyPath: m_Name
+      value: LoadingProgressText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a72366023a7d50c4caf744d4783116d5, type: 2}
   m_IsPrefabAsset: 0
