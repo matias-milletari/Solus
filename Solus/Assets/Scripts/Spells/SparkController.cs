@@ -48,11 +48,7 @@ public class SparkController : MonoBehaviour
         {
             coll.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
 
-            var stunParticleClone = Instantiate(stunParticle, coll.gameObject.transform.position, coll.gameObject.transform.rotation, coll.gameObject.transform);
-
-            Destroy(stunParticleClone, stunDuration);
-
-            coll.gameObject.GetComponent<EnemyStatus>().SetStun(true, stunDuration, stunParticleClone);
+            coll.gameObject.GetComponent<EnemyStatus>().SetStun();
         }
 
         AddExplosion();

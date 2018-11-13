@@ -1,0 +1,64 @@
+tree("Root")
+	fallback
+		tree("IsAlive")
+
+tree("IsAlive")
+	fallback
+		not IsAlive
+		tree("Stunned")
+		tree("Patrol")		
+		tree("ChaseTarget")		
+
+tree("Patrol")
+	while 
+		sequence 
+				not IsTargetVisible
+				not HasTarget
+		repeat
+			sequence
+				SetNextWaypoint
+				Move
+
+tree("ChaseTarget")
+	fallback
+		while 
+			parallel
+				not TargetInShootingRange
+				not TargetInMeleeRange				
+			sequence
+				SetTarget	
+				ChaseTarget
+				Move
+					
+		while 
+			race
+				TargetInShootingRange
+				TargetInMeleeRange		
+			sequence
+				Stop
+				SetTarget
+				tree("Attack")
+
+tree("Attack")
+	race
+		while IsRanged
+			repeat
+				tree("Shoot")
+
+		while IsMelee
+			repeat
+				tree("Melee")
+
+tree("Shoot")
+	sequence
+		TargetInShootingRange
+		AttackCooldown
+		AimAtTarget
+		Fire
+
+tree("Melee")
+	sequence
+		TargetInMeleeRange
+		AttackCooldown
+		AimAtTarget
+		Hit

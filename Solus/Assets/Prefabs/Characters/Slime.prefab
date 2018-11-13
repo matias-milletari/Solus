@@ -192,8 +192,9 @@ GameObject:
   - component: {fileID: 82808589196770434}
   - component: {fileID: 114046880650414508}
   - component: {fileID: 114035479942934446}
-  - component: {fileID: 114281121114681492}
   - component: {fileID: 114359398799621930}
+  - component: {fileID: 114046989362418948}
+  - component: {fileID: 114735984589288022}
   m_Layer: 10
   m_Name: Slime
   m_TagString: Enemy
@@ -808,6 +809,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f518adbcd37e746b34440ed94d9b82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stunDuration: 0
+  stunParticle: {fileID: 0}
 --- !u!114 &114046880650414508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -820,13 +823,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumHealth: 100
-  currentHealth: 0
   sinkSpeed: 1.5
   deathAudioClip: {fileID: 8300000, guid: 4dc8c7d31000e264f85c3ba18b03368f, type: 3}
   hurtAudioSource: {fileID: 82064918027809728}
-  isStunned: 0
-  stunDuration: 0
---- !u!114 &114281121114681492
+  criticalHealthPercentage: 0
+--- !u!114 &114046989362418948
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -834,34 +835,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1792925136198804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d55dddad3223149a22ac4f8e2fd223, type: 3}
+  m_Script: {fileID: 11500000, guid: 17e43e7170fb45b4b81dcd16d0ff55d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMelee: 1
-  isRanged: 1
-  navMeshAgent: {fileID: 0}
-  animator: {fileID: 0}
-  player: {fileID: 0}
-  playerHealth: {fileID: 0}
-  enemySensor: {fileID: 0}
-  currentWaypoint: 0
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  timeToStopFollowing: 2
-  enemyProjectile: {fileID: 1891247427062478, guid: fbc9c3f6ced95f74788ba3a26c366a72,
-    type: 2}
-  shootingPoint: {fileID: 4039880159326228}
-  projectileSpeed: 5
-  rangedDistance: 6
-  timeBetweenRangedAttacks: 1
-  rangedAttackDamage: 10
-  meleeDistance: 1.3
-  timeBetweenMeleeAttacks: 2
-  meleeAttackDamage: 20
+  scripts:
+  - {fileID: 4900000, guid: dcbbc15d5e22c5a41a7d0afb2705cd73, type: 3}
+  - {fileID: 4900000, guid: 12774ab8827134c4d829982ad146fe2e, type: 3}
+  autoReset: 1
+  tickOn: 0
+  sourceInfos:
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
 --- !u!114 &114359398799621930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -882,6 +874,35 @@ MonoBehaviour:
   detectionAngle: 180
   hitPosition: {x: 0, y: 0, z: 0}
   searchPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &114735984589288022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1792925136198804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a5ad4b79bf20e40b52375a11d92421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMelee: 1
+  isRanged: 1
+  rotationSpeed: 200
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  timeToStopFollowing: 2
+  enemyProjectile: {fileID: 1891247427062478, guid: fbc9c3f6ced95f74788ba3a26c366a72,
+    type: 2}
+  shootingPoint: {fileID: 4039880159326228}
+  projectileSpeed: 5
+  rangedDistance: 6
+  timeBetweenRangedAttacks: 1
+  rangedAttackDamage: 10
+  timeBetweenMeleeAttacks: 2
+  meleeDistance: 1.3
+  meleeAttackDamage: 20
 --- !u!136 &136760526684306202
 CapsuleCollider:
   m_ObjectHideFlags: 1

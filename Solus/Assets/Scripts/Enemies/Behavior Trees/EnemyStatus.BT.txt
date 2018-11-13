@@ -1,0 +1,9 @@
+tree("Stunned")
+	sequence
+		IsStunned
+		sequence
+			ApplyStun
+			while IsStunned
+				sequence
+					StunCooldown
+					RemoveStun

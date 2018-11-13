@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
                 waypoints[j] = paths[i].GetChild(j).GetComponent<Transform>();
             }
 
-            enemyPrefab.GetComponent<EnemyAI>().waypoints = waypoints;
+            enemyPrefab.GetComponent<EnemyController>().SetWaypoints(waypoints);
 
             Instantiate(enemyPrefab, spawnPoints[i].transform.position, transform.rotation);
 

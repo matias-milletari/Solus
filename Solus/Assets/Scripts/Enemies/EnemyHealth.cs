@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Panda;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
@@ -7,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float sinkSpeed = 1.5f;
     [SerializeField] private AudioClip deathAudioClip;
     [SerializeField] private AudioSource hurtAudioSource;
+    [SerializeField] private float criticalHealthPercentage;
 
     public delegate void EnemyDestroyedHandler();
     public static event EnemyDestroyedHandler OnEnemyDestroyed;
@@ -95,8 +97,15 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject, 2f);
     }
 
+    [Task]
     public bool IsAlive()
     {
         return currentHealth > 0;
+    }
+
+    [Task]
+    public bool IsHealthCritical()
+    {
+        return currentHealth * 100 / maximumHealth < criticalHealthPercentage;
     }
 }

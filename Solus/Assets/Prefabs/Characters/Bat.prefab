@@ -447,8 +447,9 @@ GameObject:
   - component: {fileID: 82040674121051448}
   - component: {fileID: 114749238829793232}
   - component: {fileID: 114509766964617168}
-  - component: {fileID: 114131371938733238}
   - component: {fileID: 114414363667731388}
+  - component: {fileID: 114976902866943356}
+  - component: {fileID: 114367496989220238}
   m_Layer: 10
   m_Name: Bat
   m_TagString: Enemy
@@ -1580,7 +1581,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114131371938733238
+--- !u!114 &114367496989220238
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1588,32 +1589,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1660445085584518}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d55dddad3223149a22ac4f8e2fd223, type: 3}
+  m_Script: {fileID: 11500000, guid: 92a5ad4b79bf20e40b52375a11d92421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMelee: 1
-  isRanged: 0
-  navMeshAgent: {fileID: 0}
-  animator: {fileID: 0}
-  player: {fileID: 0}
-  playerHealth: {fileID: 0}
-  enemySensor: {fileID: 0}
-  currentWaypoint: 0
+  rotationSpeed: 0
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  timeToStopFollowing: 3
+  timeToStopFollowing: 0
+  isMelee: 1
+  isRanged: 0
   enemyProjectile: {fileID: 0}
   shootingPoint: {fileID: 0}
+  environmentLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
   projectileSpeed: 0
+  meleeDistance: 1.3
   rangedDistance: 0
   timeBetweenRangedAttacks: 0
-  rangedAttackDamage: 0
-  meleeDistance: 1.3
   timeBetweenMeleeAttacks: 0.5
+  rangedAttackDamage: 0
   meleeAttackDamage: 5
 --- !u!114 &114414363667731388
 MonoBehaviour:
@@ -1646,6 +1645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f518adbcd37e746b34440ed94d9b82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stunDuration: 0
+  stunParticle: {fileID: 0}
 --- !u!114 &114749238829793232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1661,6 +1662,34 @@ MonoBehaviour:
   sinkSpeed: 2.5
   deathAudioClip: {fileID: 8300000, guid: 0eaf044761bf51742ba3eec08c034c87, type: 3}
   hurtAudioSource: {fileID: 82289514853904072}
+  criticalHealthPercentage: 0
+--- !u!114 &114976902866943356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1660445085584518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e43e7170fb45b4b81dcd16d0ff55d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scripts:
+  - {fileID: 4900000, guid: dcbbc15d5e22c5a41a7d0afb2705cd73, type: 3}
+  - {fileID: 4900000, guid: 12774ab8827134c4d829982ad146fe2e, type: 3}
+  autoReset: 1
+  tickOn: 0
+  sourceInfos:
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
 --- !u!136 &136995115694170696
 CapsuleCollider:
   m_ObjectHideFlags: 1
